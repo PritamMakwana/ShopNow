@@ -17,6 +17,7 @@
                 <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>ID</th>
                         <th>Categry</th>
                         <th>Product</th>
@@ -26,9 +27,11 @@
                         <th>Action</th>
                     </tr>
                 </thead>
+                @php($i = 0)
                 <tbody>
                     @forelse ($products as $product)
                     <tr>
+                        <td>{{ ++$i}}</td>
                         <td>{{ $product->id }}</td>
                         <td>
                             @if($product->category)
