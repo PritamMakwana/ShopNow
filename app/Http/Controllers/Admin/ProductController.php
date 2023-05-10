@@ -96,7 +96,11 @@ class ProductController extends Controller
 
         $validateData = $request->validated();
 
-        $product = Category::findOrFail($validateData['category_id'])->products()->where('id',$product_id)->first();
+        //error
+        // $product = Category::findOrFail($validateData['category_id'])->products()->where('id',$product_id)->first();
+        // dd(Category::findOrFail($validateData['category_id'])->products()->where('id',$product_id));
+
+          $product = Product::findOrFail($product_id)->where('id',$product_id)->first();
 
         if($product){
 
