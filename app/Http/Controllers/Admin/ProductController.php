@@ -100,7 +100,7 @@ class ProductController extends Controller
         // $product = Category::findOrFail($validateData['category_id'])->products()->where('id',$product_id)->first();
         // dd(Category::findOrFail($validateData['category_id'])->products()->where('id',$product_id));
 
-          $product = Product::findOrFail($product_id)->where('id',$product_id)->first();
+          $product = Product::where('id',$product_id)->first();
 
         if($product){
 
