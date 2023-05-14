@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-md-3">
             @if($category->brands)
-            <div class="cart">
-                <div class="cart-header"><h4>Brands</h4></div>
+            <div class="card">
+                <div class="card-header"><h4>Brands</h4></div>
                 <div class="card-body">
                     @foreach ($category->brands as $branditem)
                     <label class="d-block">
@@ -13,6 +13,22 @@
                 </div>
             </div>
             @endif
+
+
+
+            <div class="card mt-3">
+                <div class="card-header"><h4>Price</h4></div>
+                <div class="card-body">
+                    <label class="d-block">
+                        <input type="radio" name="priceSort" wire:model="priceInput" value="high-to-low"/> High to Low
+                    </label>
+                    <label class="d-block">
+                        <input type="radio" name="priceSort" wire:model="priceInput" value="low-to-Hight"/> Low to High
+                    </label>
+                </div>
+            </div>
+
+
 
         </div>
         <div class="col-md-9">
