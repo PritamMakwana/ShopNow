@@ -1,7 +1,24 @@
 <div>
     <div class="row">
-        @forelse ($products as $productsItem )
         <div class="col-md-3">
+            @if($category->brands)
+            <div class="cart">
+                <div class="cart-header"><h4>Brands</h4></div>
+                <div class="card-body">
+                    @foreach ($category->brands as $branditem)
+                    <label class="d-block">
+                        <input type="checkbox" wire:model="brandInputs" value="{{$branditem->name}}" /> {{$branditem->name}}
+                    </label>
+                    @endforeach
+                </div>
+            </div>
+            @endif
+
+        </div>
+        <div class="col-md-9">
+    <div class="row">
+        @forelse ($products as $productsItem )
+        <div class="col-md-4">
             <div class="product-card">
                 <div class="product-card-img">
                     @if($productsItem->quantity>0)
@@ -45,4 +62,9 @@
 
         @endforelse
     </div>
+
+
+</div>
+</div>
+
 </div>
