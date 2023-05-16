@@ -8,7 +8,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 class View extends Component
 {
-    public $product,$category,$productColorSelectedQuantity;
+    public $product,$category,$productColorSelectedQuantity,$quantityCount = 1;
 
     public function addToWishList($productId){
         if(Auth::check()){
@@ -47,6 +47,19 @@ class View extends Component
             return false;
         }
     }
+
+    public function incrementQuantity(){
+        if($this->quantityCount < 10){
+        $this->quantityCount++;
+        }
+    }
+    public function decrementQuantity(){
+        if($this->quantityCount > 1){
+        $this->quantityCount--;
+        }
+    }
+
+
 
     public function colorSelected($productColorId){
         $productColor =  $this->product->productColors()->where('id',$productColorId)->first();
