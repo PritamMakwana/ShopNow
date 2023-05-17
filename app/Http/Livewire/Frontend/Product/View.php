@@ -79,7 +79,7 @@ class View extends Component
                         ->where('product_color_id',$this->productColorId)
                         ->exists())
                         {
-
+                            $this->emit('CartAddedUpdated');
                             $this->dispatchBrowserEvent('message',
                         [
                             'text' => 'Product Already Added',
@@ -106,6 +106,7 @@ class View extends Component
                                     'quantity' => $this->quantityCount,
                                 ]);
 
+                                $this->emit('CartAddedUpdated');
                                 $this->dispatchBrowserEvent('message',
                                 [
                                     'text' => 'Product Added to Cart',
