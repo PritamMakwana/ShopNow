@@ -73,16 +73,27 @@
                         </div>
                         <div class="mt-2">
 
-                            <button type="button" wire:click="addToCart({{$product->id}})"  class="btn btn1"> <i class="fa fa-shopping-cart"></i> Add To Cart</button>
+                            <button type="button" wire:loading.attr="disabled" wire:click="addToCart({{$product->id}})"  class="btn btn1">
+
+                                <span wire:loading.remove wire:target="addToCart({{$product->id}})">
+                                    <i class="fa fa-shopping-cart"> Add to Cart</i>
+                                   </span>
+
+                                   <span wire:loading wire:target="addToCart({{$product->id}})"> Adding... </span>
 
 
-                            <button type="button"
+                            </button>
+
+
+                            <button type="button" wire:loading.attr="disabled"
                             wire:click="addToWishList({{$product->id}})"
                             class="btn btn1">
-                            <span wire:loading.remove wire:target="addToWishList">
+
+                            <span wire:loading.remove wire:target="addToWishList({{$product->id}})">
                              <i class="fa fa-heart"></i> Add To Wishlist
                             </span>
-                            <span wire:loading wire:target="addToWishList">Adding...</span>
+
+                            <span wire:loading wire:target="addToWishList({{$product->id}})">Adding...</span>
                         </button>
                         </div>
                         <div class="mt-3">
