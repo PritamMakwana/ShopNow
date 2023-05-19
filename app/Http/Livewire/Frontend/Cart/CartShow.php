@@ -17,7 +17,7 @@ class CartShow extends Component
             if($cartData->productColor()->where('id',$cartData->product_color_id)->exists()){
 
                 $productColor = $cartData->productColor()->where('id',$cartData->product_color_id)->first();
-                if($productColor->quantity > $cartData->quantity){
+                if(1 < $cartData->quantity){
                     $cartData->decrement('quantity');
                     $this->dispatchBrowserEvent(
                         'message',
@@ -32,8 +32,8 @@ class CartShow extends Component
                     $this->dispatchBrowserEvent(
                         'message',
                         [
-                            'text' => 'Only '.$productColor->quantity .' Quantity Available',
-                            'type' => 'success',
+                            'text' => '1 Quantity is Required',
+                            'type' => 'warning',
                             'status' => 200
                         ]
                     );
@@ -41,7 +41,7 @@ class CartShow extends Component
 
             }else{
 
-                if ($cartData->product->quantity > $cartData->quantity) {
+                if(1 < $cartData->quantity){
                     $cartData->decrement('quantity');
                     $this->dispatchBrowserEvent(
                         'message',
@@ -56,7 +56,7 @@ class CartShow extends Component
                     $this->dispatchBrowserEvent(
                         'message',
                         [
-                            'text' => 'Only '.$cartData->product->quantity .' Quantity Available',
+                            'text' => '1 Quantity is Required',
                             'type' => 'success',
                             'status' => 200
                         ]
