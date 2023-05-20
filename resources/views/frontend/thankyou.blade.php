@@ -10,6 +10,9 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="p-4 shadow bg-white">
+                @if(session('message'))
+                    <h5 class="alert alert-success">{{session('message')}}</h5>
+                @endif
                 <h2>ShopNow</h2>
                 <h4>Thank You for Shopping with Funda Ecommerce</h4>
                 <a href="{{url('collections/')}}" class="btn btn-primary">Shop now</a>
