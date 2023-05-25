@@ -21,6 +21,13 @@
       </li>
 
       <li class="nav-item">
+        <a class="nav-link" href="{{url('admin/orders')}}">
+          <i class="mdi mdi-sale menu-icon"></i>
+          <span class="menu-title">Orders</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link" href="{{url('admin/category')}}">
           <i class="mdi mdi-view-headline menu-icon"></i>
           <span class="menu-title">Category</span>
