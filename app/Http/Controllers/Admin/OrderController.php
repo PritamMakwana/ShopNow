@@ -29,12 +29,29 @@ class OrderController extends Controller
 
     public function show(int $orderId){
 
-        $orders = Order::where('id',$orderId)->first();
-        if($orders){
-        return view('admin.orders.view',compact('orders'));
+        $order = Order::where('id',$orderId)->first();
+        if($order){
+        return view('admin.orders.view',compact('order'));
         }else{
             return redirect('admin/orders')->with('message','Order Id not found');
         }
 
     }
+
+
+    public function updateOrderStatus(int $orderId,Request $request){
+
+        $order = Order::where('id',$orderId)->first();
+        if($order){
+            $order->update([
+                'status_message' => $request->order_status,
+            ]);
+        return redirect('admin/orders/'.$orderId)->with('message','Order Status Updated');
+
+        }else{
+            return redirect('admin/orders/'.$orderId)->with('message','Order Id not found');
+        }
+
+    }
+
 }
