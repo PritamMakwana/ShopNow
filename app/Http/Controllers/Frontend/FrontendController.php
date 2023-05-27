@@ -20,6 +20,11 @@ class FrontendController extends Controller
         return view('frontend.collections.category.index',compact('categories'));
     }
 
+    public function newArrival(){
+        $newArrivalsProducts = Product::latest()->take(15)->get();
+        return view('frontend.pages.new-arrival',compact('newArrivalsProducts'));
+    }
+
     public function products($category_slug)
     {
         $category = Category::where('slug',$category_slug)->first();
