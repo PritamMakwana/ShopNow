@@ -51,6 +51,12 @@
 <body>
     <div id="app">
         @include('layouts.inc.frontend.navbar')
+
+
+
+
+
+
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -110,6 +116,10 @@
         <main>
             @yield('content')
         </main>
+
+        @include('layouts.inc.frontend.footer')
+
+
     </div>
 
 
