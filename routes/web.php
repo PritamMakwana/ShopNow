@@ -50,6 +50,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group( function(){
 
     Route::get('dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index']);
 
+    Route::get('settings',[App\Http\Controllers\Admin\SettingController::class,'index']);
+    Route::post('settings',[App\Http\Controllers\Admin\SettingController::class,'store']);
+
     Route::controller(CategoryController::class)->group(function () {
         Route::get('category','index');
         Route::get('category/create','create');
