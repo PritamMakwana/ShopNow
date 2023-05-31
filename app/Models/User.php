@@ -25,6 +25,11 @@ class User extends Authenticatable
         'role_as',
     ];
 
+    public function userDetail()
+    {
+        return $this->hasOne(UserDetail::class,'user_id','id');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -43,4 +48,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
 }

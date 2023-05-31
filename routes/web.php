@@ -40,6 +40,9 @@ Route::get('checkout',[App\Http\Controllers\Frontend\CheckoutController::class,'
 Route::get('orders',[App\Http\Controllers\Frontend\OrderController::class,'index']);
 Route::get('orders/{orderId}',[App\Http\Controllers\Frontend\OrderController::class,'show']);
 
+Route::get('profile',[App\Http\Controllers\Frontend\UserController::class,'index']);
+Route::post('profile',[App\Http\Controllers\Frontend\UserController::class,'updateUserDetails']);
+
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
