@@ -17,6 +17,17 @@ class FrontendController extends Controller
         $featuredProducts = Product::where('featured','1')->latest()->take(14)->get();
         return view('frontend.index',compact('sliders','trendingProduct','newArrivalsProducts','featuredProducts'));
     }
+
+    public function searchProducts(Request $request)
+    {
+        if($request->search){
+            $searchProducts = Product::where('name','LIKE','%'.$request->search.'%')->latest()->paginate(15);
+            return view('frontend.pages.search',compact('searchProducts'));
+        }else{
+            return redirect()->back()->with('message','Empty Search');
+        }
+    }
+
     public function categories(){
         $categories = Category::where('status','0')->get();
         return view('frontend.collections.category.index',compact('categories'));
@@ -65,5 +76,7 @@ class FrontendController extends Controller
     public function thankyou(){
         return view('frontend.thankyou');
     }
+
+
 
 }
