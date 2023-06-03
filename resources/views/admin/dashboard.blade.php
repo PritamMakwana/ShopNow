@@ -10,7 +10,7 @@
             @endif
           <div class="me-md-3 me-xl-5">
             <h2>Dashboard</h2>
-            <p class="mb-md-0">Your analytics dashboard template.</p>
+            {{-- <p class="mb-md-0">Your analytics dashboard template.</p> --}}
           </div>
           <hr>
 
