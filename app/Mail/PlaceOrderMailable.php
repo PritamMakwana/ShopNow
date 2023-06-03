@@ -8,12 +8,13 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use PHPUnit\TextUI\Configuration\Builder;
 
-class InvoiceOrderMailable extends Mailable
+class PlaceOrderMailable extends Mailable
 {
     use Queueable, SerializesModels;
+
     public $order;
+
     /**
      * Create a new message instance.
      */
@@ -28,7 +29,7 @@ class InvoiceOrderMailable extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Invoice Order Mailable',
+            subject: 'Order Placed Successfully, Thank you',
         );
     }
 
@@ -38,7 +39,7 @@ class InvoiceOrderMailable extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'admin.invoice.genrate-invoice',
+            view: 'frontend.users.invoice.mail-invoice',
         );
     }
 
@@ -51,6 +52,4 @@ class InvoiceOrderMailable extends Mailable
     {
         return [];
     }
-
-
 }
