@@ -52,9 +52,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{url('/profile')}}"><i class="fa fa-user"></i> Profile</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                            {{-- <li><a class="dropdown-item" href="{{url('/my-order')}}"><i class="fa fa-list"></i> My Orders</a></li> --}}
                             <li>
                                 {{-- <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a> --}}
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -98,19 +96,10 @@
                         <a class="nav-link" href="{{url('/featured-products')}}">Featured Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Electronics</a>
+                        <a class="nav-link" href="{{url('/about-us')}}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Fashions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Accessories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Appliances</a>
+                        <a class="nav-link" href="{{url('/contact-us')}}">Contact</a>
                     </li>
                 </ul>
             </div>

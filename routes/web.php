@@ -31,6 +31,9 @@ Route::get('/new-arrivals','newArrival');
 Route::get('/featured-products','featuredProducts');
 Route::get('search','searchProducts');
 
+Route::get('/about-us','about');
+Route::get('/contact-us','contact');
+
 });
 
 Route::middleware(['auth'])->group(function (){

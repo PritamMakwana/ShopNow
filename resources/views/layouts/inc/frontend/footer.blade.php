@@ -16,8 +16,6 @@
                     <div class="mb-2"><a href="{{url('/')}}" class="text-white">Home</a></div>
                     <div class="mb-2"><a href="{{url('/about-us')}}" class="text-white">About Us</a></div>
                     <div class="mb-2"><a href="{{url('/contact-us')}}" class="text-white">Contact Us</a></div>
-                    <div class="mb-2"><a href="{{url('/blogs')}}" class="text-white">Blogs</a></div>
-                    <div class="mb-2"><a href="#" class="text-white">Sitemaps</a></div>
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-heading">Shop Now</h4>
@@ -29,7 +27,7 @@
                     <div class="mb-2"><a href="{{url('/cart')}}" class="text-white">Cart</a></div>
                 </div>
                 <div class="col-md-3">
-                    <h4 class="footer-heading">Reach Us</h4>
+                    <h4 class="footer-heading">Contact Us</h4>
                     <div class="footer-underline"></div>
                     <div class="mb-2">
                         <p>
